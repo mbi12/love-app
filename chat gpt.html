@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Our Love Story ❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap');
+        
+        :root {
+            --love-pink: #ff6b8b;
+            --love-dark: #d23669;
+            --love-light: #fff0f3;
+            --gold: #ffd700;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #fff0f3 0%, #ffd6e0 100%);
+            margin: 0;
+            padding: 0;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        #securityQuizModal {
+            display: flex;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        #securityQuizModal .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            animation: zoomIn 0.5s ease-out;
+        }
+        
+        #securityQuizModal h2 {
+            color: var(--love-dark);
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        #securityQuizModal p {
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            color: #555;
+        }
+        
+        #securityAnswer {
+            padding: 15px;
+            width: 80%;
+            border: 2px solid var(--love-pink);
+            border-radius: 30px;
+            font-size: 1em;
+            margin: 15px 0;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        #securityAnswer:focus {
+            outline: none;
+            border-color: var(--love-dark);
+            box-shadow: 0 0 10px rgba(214, 51, 108, 0.3);
+        }
+        
+        .security-btn {
+            background: linear-gradient(to right, var(--love-pink), var(--love-dark));
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            margin-top: 10px;
+            box-shadow: 0 4px 8px rgba(214, 51, 108, 0.3);
+        }
+        
+        .security-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(214, 51, 108, 0.4);
+        }
+        
+        #securityResult {
+            margin-top: 20px;
+            min-height: 24px;
+            font-weight: bold;
+            color: var(--love-dark);
+        }
+        
+        .locked-content {
+            display: none;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: var(--love-dark);
+            font-size: 4em;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: 
+                pulse 2s infinite ease-in-out,
+                rainbow 10s infinite linear,
+                floatTitle 5s infinite ease-in-out;
+            transform-origin: center;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes rainbow {
+            0% { color: #d23669; }
+            20% { color: #ff6b8b; }
+            40% { color: #ff8e53; }
+            60% { color: #47b8e0; }
+            80% { color: #9c51b6; }
+            100% { color: #d23669; }
+        }
+        
+        @keyframes floatTitle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Countdown styles */
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            perspective: 1000px;
+        }
+        
+        .countdown-box {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(214, 51, 108, 0.2);
+            min-width: 200px;
+            animation: 
+                floatUp 3s ease-in-out infinite alternate,
+                fadeInUp 1s ease-out forwards;
+            transform-style: preserve-3d;
+            opacity: 0;
+        }
+        
+        .countdown-box:nth-child(1) { animation-delay: 0.3s; }
+        .countdown-box:nth-child(2) { animation-delay: 0.6s; }
+        .countdown-box:nth-child(3) { animation-delay: 0.9s; }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .month-box {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: white;
+            animation: 
+                pulseGlow 2s infinite alternate,
+                floatUp 3s ease-in-out infinite alternate;
+            border: 2px solid var(--gold);
+        }
+        
+        @keyframes pulseGlow {
+            to { box-shadow: 0 0 15px rgba(255, 105, 140, 0.6); }
+        }
+        
+        @keyframes floatUp {
+            0%, 100% { transform: translateY(0) rotateX(0); }
+            50% { transform: translateY(-15px) rotateX(5deg); }
+        }
+        
+        .countdown-title {
+            font-weight: bold;
+            color: var(--love-dark);
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+        }
+        
+        .month-title {
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .countdown-timer {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: var(--love-pink);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .month-timer {
+            color: white;
+            font-size: 2em;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .months-together {
+            font-size: 1.2em;
+            margin-top: 10px;
+            font-style: italic;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1.2s forwards;
+        }
+        
+        .month-bling {
+            animation: 
+                pulseGlow 0.5s ease-in-out 3,
+                rainbow 3s ease-in-out;
+            transform-origin: center;
+        }
+        
+        /* Timeline styles */
+        .timeline {
+            position: relative;
+            margin: 50px auto;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1.5s forwards;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--love-pink), rgba(214, 51, 108, 0.3));
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        
+        .timeline-event {
+            position: relative;
+            margin-bottom: 80px;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .timeline-event:nth-child(1) { animation: fadeInUp 1s ease-out 1.8s forwards; }
+        .timeline-event:nth-child(2) { animation: fadeInUp 1s ease-out 2.1s forwards; }
+        .timeline-event:nth-child(3) { animation: fadeInUp 1s ease-out 2.4s forwards; }
+        
+        .event-content {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 20px rgba(214, 51, 108, 0.2);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            width: 45%;
+            margin-left: 5%;
+        }
+        
+        .timeline-event:nth-child(even) .event-content {
+            margin-left: 50%;
+        }
+        
+        .event-content:hover {
+            transform: translateY(-5px) rotateZ(1deg);
+            box-shadow: 0 15px 30px rgba(214, 51, 108, 0.3);
+        }
+        
+        .event-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+        
+        .timeline-event:nth-child(odd) .event-content::before {
+            right: 100%;
+            border-width: 10px 15px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+        
+        .timeline-event:nth-child(even) .event-content::before {
+            left: 100%;
+            border-width: 10px 0 10px 15px;
+            border-color: transparent transparent transparent white;
+        }
+        
+        .date {
+            font-weight: bold;
+            color: var(--love-dark);
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .photo {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        
+        .photo:nth-child(1) { animation-delay: 2s; }
+        .photo:nth-child(2) { animation-delay: 2.2s; }
+        .photo:nth-child(3) { animation-delay: 2.4s; }
+        
+        .photo:hover {
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            animation: heartbeat 0.8s ease-in-out;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        #loveLetter {
+            font-size: 1.3em;
+            line-height: 1.8;
+            margin: 40px auto;
+            max-width: 600px;
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(214, 51, 108, 0.2);
+            min-height: 200px;
+            font-family: 'Dancing Script', cursive;
+            color: #555;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 2.7s forwards;
+        }
+        
+        .secret-btn {
+            background: linear-gradient(to right, var(--love-pink), var(--love-dark));
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 30px 0;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(214, 51, 108, 0.3);
+            opacity: 0;
+            animation: fadeIn 1s ease-out 3s forwards, pulse 2s infinite 3.5s;
+        }
+        
+        .secret-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 16px rgba(214, 51, 108, 0.4);
+            background: linear-gradient(to right, var(--love-dark), var(--love-pink));
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: var(--love-pink);
+            animation: float 5s ease-in-out infinite;
+            opacity: 0.7;
+            z-index: -1;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+        
+        .music-player {
+            margin: 30px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.9s forwards;
+        }
+        
+        .music-btn {
+            background: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--love-dark);
+            animation: pulse 2s infinite ease-in-out;
+        }
+        
+        .music-btn:hover {
+            transform: scale(1.1);
+            background: var(--love-light);
+        }
+        
+        .love-meter {
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(214, 51, 108, 0.2);
+            max-width: 400px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 1.2s forwards;
+        }
+        
+        .meter {
+            height: 20px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+        
+        .meter-fill {
+            height: 100%;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            width: 100%;
+            border-radius: 10px;
+            animation: fillLove 2s ease-out forwards, pulseGlow 2s infinite alternate 2s;
+        }
+        
+        /* Modal for enlarged photos */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        .modal-content {
+            max-width: 80%;
+            max-height: 80%;
+            animation: zoomIn 0.3s ease-out;
+        }
+        
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 35px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .close:hover {
+            transform: rotate(90deg) scale(1.2);
+            color: var(--love-pink);
+        }
+        
+        /* Sparkle animation */
+        .sparkle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkle 1s ease-out forwards;
+            box-shadow: 0 0 10px 2px white;
+        }
+        
+        @keyframes sparkle {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        
+        /* Floating hearts background */
+        #hearts-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        /* Smooth number transitions */
+        .countdown-number {
+            display: inline-block;
+            min-width: 1.2em;
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .updating {
+            transform: translateY(-10px);
+            opacity: 0;
+        }
+        
+        .updated {
+            animation: popIn 0.5s ease-out;
+        }
+        
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Security Quiz Modal -->
+    <div id="securityQuizModal">
+        <div class="modal-content">
+            <h2>Love Verification</h2>
+            <p>Answer these personal questions to prove it's really you</p>
+            <div id="securityQuizContainer">
+                <p id="securityQuestionText">Loading question...</p>
+                <input type="password" id="securityAnswer" placeholder="Your answer...">
+                <button onclick="checkSecurityAnswer()" class="security-btn">Submit Answer</button>
+                <p id="securityResult"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainContent" class="locked-content">
+        <!-- Floating hearts background -->
+        <div id="hearts-container"></div>
+        
+        <div class="container">
+            <h1>Our Love Story</h1>
+            
+            <!-- Music player -->
+            <div class="music-player">
+                <div>Our Song: </div>
+                <button class="music-btn" onclick="toggleMusic()">🎵</button>
+                <audio id="bgMusic" loop>
+                    <source src="your-song.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            
+            <!-- Love meter -->
+            <div class="love-meter">
+                <h3>How Much I Love You</h3>
+                <div class="meter">
+                    <div class="meter-fill"></div>
+                </div>
+                <p>100% - Infinite and beyond</p>
+            </div>
+            
+            <!-- Countdown timers -->
+            <div class="countdown-container">
+                <div class="countdown-box month-box">
+                    <div class="countdown-title month-title">Monthly Anniversary</div>
+                    <div class="countdown-timer month-timer" id="monthlyTimer"></div>
+                    <div class="months-together" id="monthsTogether"></div>
+                </div>
+                
+                <div class="countdown-box">
+                    <div class="countdown-title">Until Our Yearly Anniversary</div>
+                    <div class="countdown-timer" id="anniversaryTimer"></div>
+                </div>
+                
+                <div class="countdown-box">
+                    <div class="countdown-title">Until Your Birthday</div>
+                    <div class="countdown-timer" id="birthdayTimer"></div>
+                </div>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="timeline">
+                <div class="timeline-event">
+                    <div class="event-content">
+                        <div class="date">November 3, 2023</div>
+                        <p>The day we started our beautiful journey together ❤️</p>
+                        <div class="photo-gallery">
+                            <img src="https://via.placeholder.com/300x200?text=Our+First+Day" alt="Our First Day" class="photo" onclick="openModal(this.src)">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-event">
+                    <div class="event-content">
+                        <div class="date">December 24, 2023</div>
+                        <p>Our first Christmas together — wrapped in your warmth and love.</p>
+                        <div class="photo-gallery">
+                            <img src="https://via.placeholder.com/300x200?text=Christmas" alt="Christmas" class="photo" onclick="openModal(this.src)">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-event">
+                    <div class="event-content">
+                        <div class="date">May 27, 2024</div>
+                        <p>Celebrating your birthday — the day the world became brighter.</p>
+                        <div class="photo-gallery">
+                            <img src="https://via.placeholder.com/300x200?text=Birthday" alt="Birthday" class="photo" onclick="openModal(this.src)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Love letter -->
+            <div id="loveLetter"></div>
+            
+            <!-- Secret button -->
+            <button class="secret-btn" onclick="revealSecret()">Click for a Special Message</button>
+        </div>
+        
+        <!-- Photo modal -->
+        <div id="photoModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="modalImage">
+        </div>
+    </div>
+    
+    <script>
+        // Security questions and functions
+        const SECURITY_QUESTIONS = [
+            { question: "What's my favorite colour?", answer: "grey", hint: "It's a neutral shade" },
+            { question: "When is our next anniversary?", answer: "3 june", hint: "Day-Month format (3 june)" },
+            { question: "When are we going to meet?", answer: "6 june", hint: "Day-Month format (6 june)" },
+            { question: "What's the first name I gave you?", answer: "wapelo", hint: "It's a special nickname" },
+            { question: "When did we meet?", answer: "3 november", hint: "Day-Month format (3 november)" }
+        ];
+
+        let currentSecurityQuestion = 0;
+        let securityAttempts = 0;
+        const MAX_ATTEMPTS = 3;
+
+        function initSecurityQuiz() {
+            currentSecurityQuestion = 0;
+            securityAttempts = 0;
+            showSecurityQuestion();
+        }
+
+        function showSecurityQuestion() {
+            document.getElementById('securityQuestionText').textContent = SECURITY_QUESTIONS[currentSecurityQuestion].question;
+            document.getElementById('securityAnswer').value = '';
+            document.getElementById('securityResult').textContent = '';
+        }
+
+        function checkSecurityAnswer() {
+            const userAnswer = document.getElementById('securityAnswer').value.toLowerCase().trim();
+            const correctAnswer = SECURITY_QUESTIONS[currentSecurityQuestion].answer.toLowerCase();
+            const resultElement = document.getElementById('securityResult');
+
+            if(userAnswer === correctAnswer) {
+                resultElement.textContent = "Correct! ❤️";
+                resultElement.style.color = "var(--love-dark)";
+                currentSecurityQuestion++;
+                if(currentSecurityQuestion >= SECURITY_QUESTIONS.length) {
+                    setTimeout(grantAccess, 1000);
+                } else {
+                    setTimeout(showSecurityQuestion, 1000);
+                }
+                securityAttempts = 0;
+            } else {
+                securityAttempts++;
+                resultElement.style.color = "#d23669";
+                if(securityAttempts >= MAX_ATTEMPTS) {
+                    resultElement.textContent = "Too many wrong attempts. Try again later.";
+                    document.getElementById('securityAnswer').disabled = true;
+                    document.querySelector('#securityQuizContainer button').disabled = true;
+                    setTimeout(initSecurityQuiz, 5000);
+                } else {
+                    resultElement.textContent = `Incorrect (Attempt ${securityAttempts}/${MAX_ATTEMPTS}). Hint: ${SECURITY_QUESTIONS[currentSecurityQuestion].hint}`;
+                }
+            }
+        }
+
+        function grantAccess() {
+            document.getElementById('securityQuizModal').style.display = 'none';
+            document.getElementById('mainContent').classList.remove('locked-content');
+            if (typeof createHearts === 'function') createHearts();
+            if (typeof typeWriter === 'function') typeWriter();
+            if (typeof updateCountdowns === 'function') {
+                updateCountdowns();
+                setInterval(updateCountdowns, 60000);
+            }
+        }
+
+        // Create floating hearts
+        function createHearts() {
+            const container = document.getElementById('hearts-container');
+            const heartCount = 30;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '❤️';
+                heart.classList.add('heart');
+                
+                // Random position and animation
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = Math.random() * 100 + 'vh';
+                heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                heart.style.animationDuration = (Math.random() * 6 + 4) + 's';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                heart.style.opacity = Math.random() * 0.5 + 0.3;
+                
+                container.appendChild(heart);
+            }
+        }
+        
+        // Typewriter love letter
+        const messages = [
+            "My Dearest Love,",
+            "",
+            "These past 6 months with you have been",
+            "the most magical time of my life.",
+            "Every day with you is a new adventure,",
+            "every moment a cherished memory.",
+            "",
+            "I love the way you [her special quality],",
+            "how you [another thing you love],",
+            "and especially how you make me feel...",
+            "",
+            "like I'm home.",
+            "",
+            "Forever yours,",
+            "[Your Name]"
+        ];
+        
+        let line = 0;
+        let char = 0;
+        let isDeleting = false;
+        
+        function typeWriter() {
+            const loveLetter = document.getElementById('loveLetter');
+            
+            if (line < messages.length) {
+                const currentLine = messages[line];
+                
+                if (!isDeleting && char <= currentLine.length) {
+                    loveLetter.innerHTML = messages.slice(0, line).join('<br>') + '<br>' + currentLine.substring(0, char);
+                    char++;
+                    setTimeout(typeWriter, 50);
+                } else if (isDeleting && char >= 0) {
+                    loveLetter.innerHTML = messages.slice(0, line).join('<br>') + '<br>' + currentLine.substring(0, char);
+                    char--;
+                    setTimeout(typeWriter, 30);
+                } else {
+                    isDeleting = !isDeleting;
+                    if (!isDeleting) line++;
+                    setTimeout(typeWriter, 1000);
+                }
+            } else {
+                // Restart animation
+                setTimeout(() => {
+                    line = 0;
+                    char = 0;
+                    isDeleting = false;
+                    typeWriter();
+                }, 10000);
+            }
+        }
+        
+        // Music toggle
+        function toggleMusic() {
+            const music = document.getElementById('bgMusic');
+            const btn = document.querySelector('.music-btn');
+            if (music.paused) {
+                music.play();
+                btn.innerHTML = '🔊';
+                btn.style.animation = 'none';
+                setTimeout(() => { btn.style.animation = 'pulse 2s infinite ease-in-out'; }, 10);
+            } else {
+                music.pause();
+                btn.innerHTML = '🎵';
+            }
+        }
+        
+        // Secret message
+        function revealSecret() {
+            const secrets = [
+                "You're the first thing I think about when I wake up.",
+                "Your smile brightens even my darkest days.",
+                "I fall in love with you more every day.",
+                "You're my favorite hello and hardest goodbye.",
+                "My heart skips a beat every time I see you.",
+                "These 6 months have been the best of my life.",
+                "I love how you make ordinary moments magical."
+            ];
+            
+            const randomSecret = secrets[Math.floor(Math.random() * secrets.length)];
+            
+            // Create a styled alert
+            const alertBox = document.createElement('div');
+            alertBox.style.position = 'fixed';
+            alertBox.style.top = '50%';
+            alertBox.style.left = '50%';
+            alertBox.style.transform = 'translate(-50%, -50%)';
+            alertBox.style.backgroundColor = 'white';
+            alertBox.style.padding = '20px';
+            alertBox.style.borderRadius = '15px';
+            alertBox.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
+            alertBox.style.zIndex = '1000';
+            alertBox.style.textAlign = 'center';
+            alertBox.style.maxWidth = '80%';
+            alertBox.style.animation = 'zoomIn 0.3s ease-out';
+            alertBox.innerHTML = `
+                <p style="font-size:1.2em; margin-bottom:15px;">${randomSecret} ❤️</p>
+                <button onclick="this.parentElement.remove()" style="
+                    background: var(--love-pink);
+                    color: white;
+                    border: none;
+                    padding: 8px 20px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                ">Close</button>
+            `;
+            
+            document.body.appendChild(alertBox);
+        }
+        
+        // Photo modal
+        function openModal(src) {
+            const modal = document.getElementById('photoModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = 'flex';
+            modalImg.src = src;
+        }
+        
+        function closeModal() {
+            document.getElementById('photoModal').style.display = 'none';
+        }
+        
+        // Sparkle effect on click
+        document.addEventListener('click', function(e) {
+            if (e.target.tagName === 'BUTTON' || e.target.tagName === 'IMG') return;
+            
+            for (let i = 0; i < 5; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.classList.add('sparkle');
+                sparkle.style.left = (e.pageX + Math.random() * 40 - 20) + 'px';
+                sparkle.style.top = (e.pageY + Math.random() * 40 - 20) + 'px';
+                sparkle.style.animationDelay = Math.random() * 0.5 + 's';
+                document.body.appendChild(sparkle);
+                
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 1000);
+            }
+        });
+        
+        // Smooth number transitions
+        function animateNumberChange(element, newValue) {
+            const numbers = element.textContent.match(/\d+/g);
+            if (!numbers) return;
+            
+            numbers.forEach(num => {
+                const newNum = newValue.match(/\d+/g)[numbers.indexOf(num)];
+                if (num !== newNum) {
+                    element.innerHTML = element.innerHTML.replace(
+                        num, 
+                        `<span class="countdown-number updating">${num}</span>`
+                    );
+                    
+                    setTimeout(() => {
+                        element.innerHTML = element.innerHTML.replace(
+                            `<span class="countdown-number updating">${num}</span>`, 
+                            `<span class="countdown-number updated">${newNum}</span>`
+                        );
+                    }, 250);
+                }
+            });
+        }
+        
+        // Monthly anniversary calculations
+        function calculateMonthlyAnniversary() {
+            const startDate = new Date(2023, 10, 3); // November 3, 2023 (months are 0-indexed)
+            const now = new Date();
+            
+            // Calculate months together
+            let months = (now.getFullYear() - startDate.getFullYear()) * 12;
+            months += now.getMonth() - startDate.getMonth();
+            
+            // Special animation when reaching a new month
+            if (localStorage.lastMonthCount != months) {
+                document.getElementById('monthsTogether').classList.add('month-bling');
+                setTimeout(() => {
+                    document.getElementById('monthsTogether').classList.remove('month-bling');
+                }, 2000);
+                localStorage.lastMonthCount = months;
+            }
+
+            // Calculate next monthly anniversary (3rd of next month)
+            let nextMonthly = new Date(now.getFullYear(), now.getMonth(), 3);
+            if (now.getDate() >= 3) {
+                nextMonthly.setMonth(nextMonthly.getMonth() + 1);
+            }
+            
+            const diff = nextMonthly - now;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+            return {
+                monthsTogether: months,
+                countdown: `${days}d ${hours}h ${mins}m`,
+                nextDate: nextMonthly
+            };
+        }
+        
+        // Countdown calculations
+        function updateCountdowns() {
+            // Monthly anniversary
+            const monthly = calculateMonthlyAnniversary();
+            const monthlyTimer = document.getElementById('monthlyTimer');
+            animateNumberChange(monthlyTimer, monthly.countdown);
+            monthlyTimer.innerHTML = monthly.countdown;
+            
+            document.getElementById('monthsTogether').innerHTML = 
+                `We've been together for ${monthly.monthsTogether} wonderful months`;
+            
+            // Yearly anniversary (November 3)
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            const anniversaryDate = new Date(currentYear, 10, 3); // November 3
+            
+            if (now > anniversaryDate) {
+                anniversaryDate.setFullYear(currentYear + 1);
+            }
+            
+            const diffAnniversary = anniversaryDate - now;
+            const daysAnniversary = Math.floor(diffAnniversary / (1000 * 60 * 60 * 24));
+            const hoursAnniversary = Math.floor((diffAnniversary % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minsAnniversary = Math.floor((diffAnniversary % (1000 * 60 * 60)) / (1000 * 60));
+            
+            const anniversaryText = `${daysAnniversary}d ${hoursAnniversary}h ${minsAnniversary}m`;
+            const anniversaryTimer = document.getElementById('anniversaryTimer');
+            animateNumberChange(anniversaryTimer, anniversaryText);
+            anniversaryTimer.innerHTML = anniversaryText;
+            
+            // Birthday (May 27)
+            const birthdayDate = new Date(currentYear, 4, 27); // May 27
+            if (now > birthdayDate) {
+                birthdayDate.setFullYear(currentYear + 1);
+            }
+            
+            const diffBirthday = birthdayDate - now;
+            const daysBirthday = Math.floor(diffBirthday / (1000 * 60 * 60 * 24));
+            const hoursBirthday = Math.floor((diffBirthday % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minsBirthday = Math.floor((diffBirthday % (1000 * 60 * 60)) / (1000 * 60));
+            
+            const birthdayText = `${daysBirthday}d ${hoursBirthday}h ${minsBirthday}m`;
+            const birthdayTimer = document.getElementById('birthdayTimer');
+            animateNumberChange(birthdayTimer, birthdayText);
+            birthdayTimer.innerHTML = birthdayText;
+        }
+        
+        // Initialize
+        window.onload = function() {
+            createHearts();
+            typeWriter();
+            updateCountdowns();
+            
+            // Update countdowns every minute with smooth transitions
+            setInterval(updateCountdowns, 60000);
+            
+            // Close modal if clicked outside
+            window.onclick = function(event) {
+                const modal = document.getElementById('photoModal');
+                if (event.target == modal) {
+                    closeModal();
+                }
+            }
+        };
+    </script>
+</body>
+</html>
