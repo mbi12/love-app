@@ -2,6 +2,11 @@
 <html>
 <head>
     <title>Our Love Story ❤️</title>
+    
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Our Love Story ❤️</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap');
         
@@ -365,6 +370,39 @@
             100% { transform: scale(1); }
         }
         
+        /* Photo Panels Styles */
+        .photo-panels {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin: 50px auto;
+            max-width: 900px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 2.7s forwards;
+        }
+        
+        .panel {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 20px rgba(214, 51, 108, 0.1);
+        }
+        
+        .panel h2 {
+            color: var(--love-dark);
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        /* Animation delays for each panel */
+        #before-we-met { animation: fadeInUp 1s ease-out 2.8s forwards; }
+        #you { animation: fadeInUp 1s ease-out 3.1s forwards; }
+        #us { animation: fadeInUp 1s ease-out 3.4s forwards; }
+        #video-calls { animation: fadeInUp 1s ease-out 3.7s forwards; }
+        #hot-sexy { animation: fadeInUp 1s ease-out 4.0s forwards; }
+        
         #loveLetter {
             font-size: 1.3em;
             line-height: 1.8;
@@ -379,7 +417,7 @@
             font-family: 'Dancing Script', cursive;
             color: #555;
             opacity: 0;
-            animation: fadeInUp 1s ease-out 2.7s forwards;
+            animation: fadeInUp 1s ease-out 4.3s forwards;
         }
         
         .secret-btn {
@@ -394,7 +432,7 @@
             transition: all 0.3s ease;
             box-shadow: 0 4px 8px rgba(214, 51, 108, 0.3);
             opacity: 0;
-            animation: fadeIn 1s ease-out 3s forwards, pulse 2s infinite 3.5s;
+            animation: fadeIn 1s ease-out 4.6s forwards, pulse 2s infinite 4.9s;
         }
         
         .secret-btn:hover {
@@ -625,9 +663,9 @@
                 </div>
                 
                 <div class="countdown-box">
-                    <div class="countdown-title">Until Your Birthday</div>
-                    <div class="countdown-timer" id="birthdayTimer"></div>
-                </div>
+                <div class="countdown-title">Until Your Birthday</div>
+                <div class="countdown-timer" id="birthdayTimer"></div>
+            </div>
             </div>
             
             <!-- Timeline -->
@@ -663,6 +701,137 @@
                 </div>
             </div>
             
+            <!-- Photo Panels -->
+            <div class="photo-panels">
+                <!-- Panel 1: Before We Met -->
+                <div class="panel" id="before-we-met">
+                    <h2>Before We Met</h2>
+                    <div class="photo-gallery">
+                        <img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\MET- (1).jpeg" alt="Life before we met" class="photo" onclick="openModal(this.src)">
+                        <img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\MET- (3).jpeg" alt="My past self" class="photo" onclick="openModal(this.src)">
+                        <img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\MET- (2).jpeg" alt="Waiting for you" class="photo" onclick="openModal(this.src)"><img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\MET- (4).jpeg" alt="Waiting for you" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\MET- (5).jpeg" alt="Waiting for you" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\MET- (6).jpeg" alt="Waiting for you" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\MET- (7).jpeg" alt="Waiting for you" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\MET- (8).jpeg" alt="Waiting for you" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\MET- (9).jpeg" alt="Waiting for you" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\MET- (10).jpeg" alt="Waiting for you" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\MET- (11).jpeg" alt="Waiting for you" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\MET- (12).jpeg" alt="Waiting for you" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\MET- (13).jpeg" alt="Waiting for you" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\MET- (14).jpeg" alt="Waiting for you" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\MET- (15).jpeg" alt="Waiting for you" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\MET- (16).jpeg" alt="Waiting for you" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\MET- (17).jpeg" alt="Waiting for you" class="photo" onclick="openModal(this.src)">
+
+
+
+
+
+                    </div>
+                </div>
+
+                <!-- Panel 2: You -->
+                <div class="panel" id="you">
+                    <h2>You</h2>
+                    <div class="photo-gallery">
+                        
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\U-(1).jpeg" alt="Your eyes" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\U-(2).jpeg" alt="Your eyes" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\U-(16).jpg" alt="Your eyes" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\U-(15).jpg" alt="Your eyes" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\U-(14).jpg" alt="Your eyes" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\U-(13).jpg" alt="Your eyes" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\U-(12).jpg" alt="Your eyes" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\U-(11).jpg" alt="Your eyes" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\U-(10).jpg" alt="Your eyes" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\U-(9).jpg" alt="Your eyes" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\U-(8).jpg" alt="Your eyes" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\U-(7).jpg" alt="Your eyes" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\U-(6).jpg" alt="Your eyes" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\U-(5).jpg" alt="Your eyes" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\U-(4).jpg" alt="Your eyes" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\U-(3).jpg" alt="Your eyes" class="photo" onclick="openModal(this.src)">
+
+                    </div>
+                </div>
+
+                <!-- Panel 3: Us -->
+                <div class="panel" id="us">
+                    <h2>Us</h2>
+                    <div class="photo-gallery">
+                        <img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\US- (1).jpeg" alt="Our first photo" class="photo" onclick="openModal(this.src)">
+                        <img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\US- (2).jpeg" alt="Together" class="photo" onclick="openModal(this.src)">
+                        <img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\US- (3).jpg" alt="Our love" class="photo" onclick="openModal(this.src)">
+                        <img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\US- (4).jpg" alt="Our love" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\US- (5).jpg" alt="Our love" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\US- (6).jpg" alt="Our love" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\US- (7).jpg" alt="Our love" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\US- (8).jpg" alt="Our love" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\US- (9).jpg" alt="Our love" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\US- (10).jpg" alt="Our love" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\US- (11).jpg" alt="Our love" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\US- (12).jpg" alt="Our love" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\US- (13).jpg" alt="Our love" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\US- (14).jpg" alt="Our love" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\US- (15).jpg" alt="Our love" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\US- (16).jpg" alt="Our love" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\US- (17).jpg" alt="Our love" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\US- (18).jpg" alt="Our love" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\US- (19).jpg" alt="Our love" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\US- (20).jpg" alt="Our love" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\US- (22).jpg" alt="Our love" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\US- (23).jpg" alt="Our love" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\US- (25).jpeg" alt="Our love" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\US- (27).jpeg" alt="Our love" class="photo" onclick="openModal(this.src)">
+
+
+
+                    </div>
+                </div>
+
+                <!-- Panel 4: Video Calls -->
+                <div class="panel" id="video-calls">
+                    <h2>Video Calls</h2>
+                    <div class="photo-gallery">
+                       
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\VCALL (2).png" alt="Our first video call" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\VCALL (3).png" alt="Our first video call" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\VCALL (4).png" alt="Our first video call" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\VCALL (5).png" alt="Our first video call" class="photo" onclick="openModal(this.src)">
+
+
+                    </div>
+                </div>
+
+                <!-- Panel 5: Hot & Sexy Body -->
+                <div class="panel" id="hot-sexy">
+                    <h2>Hot & Sexy Body</h2>
+                    <div class="photo-gallery">
+                        <img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\BODY (1).JPG" alt="Your beautiful body" class="photo" onclick="openModal(this.src)">
+                        <img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\BODY (2).JPG" alt="Stunning curves" class="photo" onclick="openModal(this.src)">
+                        <img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\BODY (3).JPEG" alt="Perfection" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\BODY (4).JPEG" alt="Perfection" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\BODY (5).JPG" alt="Perfection" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\BODY (6).JPEG" alt="Perfection" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\BODY (7).JPEG" alt="Perfection" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\BODY (8).JPEG" alt="Perfection" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\BODY (9).JPG" alt="Perfection" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\BODY (10).JPG" alt="Perfection" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\BODY (11).JPG" alt="Perfection" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\BODY (12).JPEG" alt="Perfection" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\BODY (13).JPG" alt="Perfection" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\BODY (14).JPG" alt="Perfection" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\BODY (15).JPG" alt="Perfection" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\BODY (16).JPG" alt="Perfection" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\BODY (17).JPG" alt="Perfection" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\BODY (18).JPG" alt="Perfection" class="photo" onclick="openModal(this.src)">
+<img src="C:\Users\Tshol\Desktop\chat gpt\BEFORE MET\BODY (19).JPG" alt="Perfection" class="photo" onclick="openModal(this.src)">
+
+                    </div>
+                </div>
+            </div>
+            
             <!-- Love letter -->
             <div id="loveLetter"></div>
             
@@ -677,14 +846,15 @@
         </div>
     </div>
     
+
     <script>
         // Security questions and functions
         const SECURITY_QUESTIONS = [
             { question: "What's my favorite colour?", answer: "grey", hint: "It's a neutral shade" },
-            { question: "When is our next anniversary?", answer: "3 june", hint: "Day-Month format (3 june)" },
-            { question: "When are we going to meet?", answer: "6 june", hint: "Day-Month format (6 june)" },
+            { question: "When is our next anniversary?", answer: "3 june", hint: "think think think" },
+            { question: "When are we going to meet?", answer: "6 june", hint: "think harder" },
             { question: "What's the first name I gave you?", answer: "wapelo", hint: "It's a special nickname" },
-            { question: "When did we meet?", answer: "3 november", hint: "Day-Month format (3 november)" }
+            { question: "When did we start dating?", answer: "3 november", hint: "1 month before dec" }
         ];
 
         let currentSecurityQuestion = 0;
@@ -774,14 +944,14 @@
             "Every day with you is a new adventure,",
             "every moment a cherished memory.",
             "",
-            "I love the way you [her special quality],",
-            "how you [another thing you love],",
-            "and especially how you make me feel...",
+            "I love the way you have appriciated and welcomed me in your life,",
+            "how you always lights my journey and supports me in any way possible,",
+            "and especially how you make me feel horny all the time(●'◡'●)",
             "",
             "like I'm home.",
             "",
             "Forever yours,",
-            "[Your Name]"
+            "[Mbiganyi Sebele]"
         ];
         
         let line = 0;
@@ -833,22 +1003,139 @@
             }
         }
         
-        // Secret message
-        function revealSecret() {
-            const secrets = [
-                "You're the first thing I think about when I wake up.",
-                "Your smile brightens even my darkest days.",
-                "I fall in love with you more every day.",
-                "You're my favorite hello and hardest goodbye.",
-                "My heart skips a beat every time I see you.",
-                "These 6 months have been the best of my life.",
-                "I love how you make ordinary moments magical."
+     // Secret message
+function revealSecret() {
+    // Remove any existing secret message box
+    const existingBox = document.querySelector('.secret-popup');
+    if (existingBox) existingBox.remove();
+
+    const secrets = [ 
+
+        "You're the first thing I think about when I wake up.",
+        "Your smile brightens even my darkest days.",
+        "I fall in love with you more every day.",
+        "You're my favorite hello and hardest goodbye.",
+        "My heart skips a beat every time I see you.",
+        "These 6 months have been the best of my life.",
+        "I love how you make ordinary moments magical.",
+        "You’re my favorite notification 💌",
+        "I didn’t believe in magic until I met you ✨",
+        "If kisses were stars I’d give you the galaxy 🌌💋",
+        "You’re the reason I smile for no reason 😊",
+        "Can I keep you forever Because I already can’t imagine life without you 🥺❤️",
+        "You’re my sweetest addiction 😘",
+        "Wanna make out and then cuddle for 5 hours 😏🛌",
+        "You’ve officially made my heart your permanent residence 🏠💘",
+        "Warning I'm coming over to steal kisses 💋😈",
+        "I like you more than pizza And that’s saying A LOT 🍕😍",
+        "You're the only notification I never want to mute 🔔❤️",
+        "Cuddling with you is my new cardio 🏋️‍♀️😉",
+        "Can’t wait to kiss your beautiful lips again 💄💋",
+        "You're hotter than my morning coffee ☕🔥",
+        "Are you a spell Because I’m enchanted by you 🪄💖",
+        "You Me = Netflix snacks kisses repeat 📺🍿💏",
+        "Your smile should be illegal It's too dangerous 😍🔫",
+        "I want to wake up next to you Every Single Day ☀️❤️",
+        "You’re the cutest thing I’ve ever laid my eyes on 🥰",
+        "Baby even the moon is jealous of your glow 🌙✨",
+        "Every love song suddenly makes sense now 🎶💕",
+        "You’re my favorite form of therapy 💆‍♂️💗",
+        "Your voice is my favorite sound 🎧💓",
+        "You’re the dessert to my day 🍰😘",
+        "Wanna come over and wear my hoodie (and only my hoodie) 😏🧥",
+        "Just thinking about you is giving me butterflies 🦋💞",
+        "I need a kiss Stat 😚🚨",
+        "Let’s make tonight unforgettable 💃🛏️",
+        "Can’t stop daydreaming about you… and what we’ll do later 😘🔥",
+        "You're not just my girlfriend you're my obsession 💘",
+        "Your laugh is my favorite melody 🎵❤️",
+        "Even the stars envy your beauty ✨🌠",
+        "I wish I could bottle your hugs 🫂💖",
+        "You messy hair no makeup = my weakness 🥵",
+        "I love the way your eyes sparkle when you look at me 👀✨",
+        "You're the most beautiful distraction I could ask for 💘😵",
+        "Let’s stay in bed and forget the world exists 🛏️💞",
+        "You’re the best kind of trouble 😈❤️",
+        "Let me spoil you today—and every day 💅💖",
+        "You’re cuter than a thousand puppies 🐶🥰",
+        "Damn even my phone is blushing from your selfies 📱🔥",
+        "Can’t wait to hold you tight tonight 🤗💞",
+        "I love you more than tacos And that’s deep 🌮❤️",
+        "My lips miss yours Come fix that 😘",
+        "I didn’t choose to love you—my heart did 💘",
+        "You’re everything I didn’t know I needed ❤️",
+        "Even your texts turn me on 😳📲",
+        "Let’s cancel the world and just be us 💑✨",
+        "You're so cute I could literally squeeze you 🥹💕",
+        "You're my favorite notification and my favorite human 🥰📲",
+        "You’re so hot I need an extinguisher 🔥😅",
+        "Wanna be my cuddle buddy forever 🛌💘",
+        "I swear you get more beautiful every day 💫😍",
+        "Let’s make tonight steamy 🛁🔥",
+        "Can I press pause on time when I’m with you ⏳❤️",
+        "You make my heart do backflips 🤸‍♂️💓",
+        "Just saw your pic and forgot how to breathe 📸😮‍💨",
+        "You’ve got the curves that make my heart race 💃🔥",
+        "I’m addicted to your love No rehab needed 💉💗",
+        "If love were a crime I’m guilty And you’re my accomplice 🕵️‍♀️💋",
+        "You're the plot twist I never saw coming but always needed 📖💘",
+        "How do you manage to be this sexy AND adorable 😍",
+        "Can I just kiss you forever 💏",
+        "Wanna be tangled in bedsheets with me all weekend 😈🛏️",
+        "You make me believe in soulmates ❤️‍🔥",
+        "Can we skip to the part where we kiss all night 😚🌙",
+        "You make my heart race and my thoughts naughty 🤭🔥",
+        "Damn babe you redefine the word gorgeous 😍💋",
+        "You're literally the whole package—cute sexy AND mine 💝",
+        "If I had a rose for every time I thought of you I’d have a garden 🌹🌹🌹",
+        "Let’s break the bed… with cuddles (Maybe more 😉)",
+        "You're sweeter than candy and twice as addictive 🍬💞",
+        "I just wanna grab your face and kiss you forever 😘",
+        "You’re the spark to my fire 🔥❤️",
+        "You're the naughtiest thought in my innocent mind 😇😈",
+        "Just thinking about you makes my toes curl 😳",
+        "You're like my favorite song—I play you on repeat 🎶❤️",
+        "I’ve got 99 problems and you just made me forget them all 💋",
+        "You're the pillow I wanna hug every night 🛏️💕",
+        "You're the only habit I never want to quit 🚬❤️",
+        "Your hugs are better than therapy 🤗💞",
+        "You’re dangerously irresistible 🧲💋",
+        "Let’s make a love story that turns heads 📖💘",
+        "You're the sexy surprise I thank the universe for every day 🌌💖",
+        "You Me Tonight = 🔥🔥🔥",
+        "I fall for you harder every time I look at you 😍",
+        "Being with you feels like a dream I never want to wake up from 🌙💫",
+        "Just so you know your kisses are still stuck on my mind 💋🧠",
+        "You're my favorite flavor of everything 🍦💘",
+        "Your body’s a masterpiece and I’m the biggest fan 🎨❤️‍🔥",
+        "All I need is you and a locked door 😏🔒",
+        "You're the queen of my heart—and of my fantasies 👑💋",
+        "You’re so gorgeous it’s borderline unfair 😫💕",
+        "Baby your love is my favorite escape 🛫💖",
+        "You had me at 'hi' and completely destroyed me with your smile 😊💘",
+        "Let’s make memories—and maybe a mess 😈🛏️",
+        "You’re the cutest hottest and most lovable human alive ❤️‍🔥",
+        "My favorite position Next to you 🛌💞",
+        "You’re the reason my phone battery dies so fast 😅📱❤️"
+   
+
             ];
             
             const randomSecret = secrets[Math.floor(Math.random() * secrets.length)];
             
-            // Create a styled alert
-            const alertBox = document.createElement('div');
+const alertBox = document.createElement('div');
+alertBox.classList.add('secret-popup');  @keyframes bounceFade {
+    0% { transform: scale(0.8); opacity: 0; }
+    60% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.secret-popup {
+    animation: bounceFade 0.5s ease-out;
+
+}
+
+
             alertBox.style.position = 'fixed';
             alertBox.style.top = '50%';
             alertBox.style.left = '50%';
@@ -872,7 +1159,6 @@
                     cursor: pointer;
                 ">Close</button>
             `;
-            
             document.body.appendChild(alertBox);
         }
         
